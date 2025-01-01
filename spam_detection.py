@@ -67,7 +67,8 @@ def my_form_post():
     loaded_model.load_weights("spam_detection.weights.h5")
     
     spam_probability = loaded_model.predict(np.array(numeric_text))[0][0]
-    if spam_probability > 0.8:
+    print(spam_probability)
+    if spam_probability > 0.95:
         processed_text = 'This is a spam email.'
     else:
         processed_text = 'This is a normal email.'
